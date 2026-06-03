@@ -79,9 +79,13 @@ export function WaitlistSection({ isSubmitted, onSubmit, onBackToTop }: Waitlist
                       </select>
                     </label>
 
-                    <label className="flex flex-col gap-2 rounded-[24px] border border-blue-200 bg-blue-50/70 p-4 text-sm font-medium text-blue-950 shadow-sm shadow-blue-100/40">
-                      <span className="text-sm font-semibold">Qual sua maior dor ao contratar ou prestar serviços residenciais?</span>
+                    <label
+                      htmlFor="dor-principal"
+                      className="flex flex-col gap-2 rounded-[24px] border border-blue-200 bg-blue-50/70 p-4 text-sm font-medium text-blue-950 shadow-sm shadow-blue-100/40"
+                    >
+                      Qual sua maior dor ao contratar ou prestar serviços residenciais?
                       <textarea
+                        id="dor-principal"
                         name="dorPrincipal"
                         required
                         rows={5}

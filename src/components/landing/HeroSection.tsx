@@ -11,8 +11,9 @@ export function HeroSection() {
   return (
     <SectionReveal className="mx-auto grid max-w-6xl gap-8 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8" as="section">
       <div>
-        <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 shadow-sm shadow-emerald-100">
-          🚀 Validando o mercado em Fortaleza.
+        <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 shadow-sm shadow-emerald-100">
+          <span aria-hidden="true">🚀</span>
+          <span>Validando o mercado em Fortaleza.</span>
         </span>
         <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
           Quantas pessoas você conhece que já perderam dinheiro em uma reforma?
