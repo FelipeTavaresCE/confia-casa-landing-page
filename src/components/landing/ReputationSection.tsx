@@ -44,7 +44,7 @@ export function ReputationSection() {
             <FeatureIcon name="sparkles" className="h-4 w-4" />
             Selos ConfiaCasa
           </div>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               'Identidade Verificada',
               'CNPJ Ativo',
@@ -53,11 +53,11 @@ export function ReputationSection() {
               'Profissional em Validação',
               'Histórico Comprovado',
             ].map((item) => (
-              <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm font-semibold text-slate-100">
+              <li key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm font-semibold text-slate-100">
                 {item}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
           <p className="mt-6 text-sm leading-relaxed text-slate-300">
             Os selos foram pensados para recompensar bons profissionais, não para expor ou difamar pessoas.
           </p>
