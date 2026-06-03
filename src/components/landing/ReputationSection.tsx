@@ -3,12 +3,14 @@ import { SectionHeader } from './SectionHeader'
 import { SectionReveal } from './SectionReveal'
 
 const reputationFactors = [
-  { icon: 'briefcase' as const, title: 'Serviços concluídos' },
-  { icon: 'clock' as const, title: 'Cumprimento de prazo' },
-  { icon: 'receipt' as const, title: 'Cumprimento de orçamento' },
-  { icon: 'star' as const, title: 'Avaliações verificadas' },
-  { icon: 'contract' as const, title: 'Contratos executados' },
+  { icon: 'user-check' as const, title: 'Identidade validada' },
+  { icon: 'briefcase' as const, title: 'CNPJ ou CPF verificado' },
+  { icon: 'receipt' as const, title: 'Portfólio comprovado' },
+  { icon: 'clock' as const, title: 'Tempo de mercado' },
+  { icon: 'chart' as const, title: 'Serviços cadastrados' },
+  { icon: 'contract' as const, title: 'Contratos concluídos' },
   { icon: 'search' as const, title: 'Histórico de disputas' },
+  { icon: 'star' as const, title: 'Recomendações verificadas' },
 ]
 
 export function ReputationSection() {
@@ -17,12 +19,12 @@ export function ReputationSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Reputação"
-          title="Como será calculada a reputação?"
-          description="A reputação não será baseada em comentários aleatórios. Ela será construída através de entregas reais."
+          title="Reputação verificável, não comentário solto."
+          description="No ConfiaCasa, a reputação não deve depender apenas de estrelas ou comentários livres. A proposta é construir histórico com base em dados, portfólio, contratos e entregas reais."
           align="center"
         />
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {reputationFactors.map((item, index) => (
             <article
               key={item.title}
@@ -37,34 +39,30 @@ export function ReputationSection() {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="rounded-[32px] border border-slate-200 bg-slate-900 p-8 text-white shadow-xl shadow-slate-900/10">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold text-slate-200">
-              <FeatureIcon name="sparkles" className="h-4 w-4" />
-              Nosso compromisso
-            </div>
-            <p className="mt-5 text-3xl font-bold tracking-tight">Não queremos ser apenas mais um marketplace.</p>
-            <p className="mt-4 text-base leading-relaxed text-slate-300">
-              Queremos criar a infraestrutura de confiança para contratação de serviços residenciais no Brasil.
-            </p>
+        <div className="mt-12 rounded-[32px] border border-slate-200 bg-slate-900 p-8 text-white shadow-xl shadow-slate-900/10">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold text-slate-200">
+            <FeatureIcon name="sparkles" className="h-4 w-4" />
+            Selos ConfiaCasa
           </div>
-
-          <div className="rounded-[32px] border border-emerald-200 bg-emerald-50/70 p-8 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">O que isso significa</p>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              {[
-                'Menos espaço para avaliações manipuladas.',
-                'Mais previsibilidade para clientes e profissionais.',
-                'Contratações com histórico real, e não promessas vagas.',
-                'Mais transparência antes, durante e depois do serviço.',
-              ].map((item) => (
-                <div key={item} className="rounded-2xl border border-white/60 bg-white/80 p-5 text-sm leading-relaxed text-emerald-950">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              'Identidade Verificada',
+              'CNPJ Ativo',
+              'Portfólio Comprovado',
+              'Contrato Claro',
+              'Profissional em Validação',
+              'Histórico Comprovado',
+            ].map((item) => (
+              <li key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm font-semibold text-slate-100">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm leading-relaxed text-slate-300">
+            Os selos foram pensados para recompensar bons profissionais, não para expor ou difamar pessoas.
+          </p>
         </div>
+
       </div>
     </SectionReveal>
   )

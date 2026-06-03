@@ -21,15 +21,15 @@ export function WaitlistSection({ isSubmitted, onSubmit, onBackToTop }: Waitlist
             <div>
               <SectionHeader
                 eyebrow="Lista de espera"
-                title="Ajude a construir o ConfiaCasa."
-                description="Queremos entender as maiores dores de quem contrata e presta serviços para lançar algo realmente útil, claro e seguro."
+                title="Ajude a construir o ConfiaCasa"
+                description="Estamos ouvindo clientes e profissionais para criar uma plataforma de reputação verificável para serviços residenciais."
               />
 
               <div className="mt-8 space-y-4">
                 <div className="rounded-2xl border border-emerald-200 bg-emerald-50/80 p-5">
                   <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
                     <FeatureIcon name="sparkles" className="h-4 w-4" />
-                    Projeto em validação.
+                    Projeto em validação em Fortaleza.
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-emerald-950">
                     Estamos ouvindo clientes e profissionais para construir algo realmente útil antes do lançamento oficial.
@@ -78,6 +78,20 @@ export function WaitlistSection({ isSubmitted, onSubmit, onBackToTop }: Waitlist
                         <option value="Profissional">Profissional</option>
                       </select>
                     </label>
+                    <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                      Categoria de interesse (opcional)
+                      <select name="categoriaInteresse" defaultValue="" className={inputClassName}>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Energia solar">Energia solar</option>
+                        <option value="Móveis planejados">Móveis planejados</option>
+                        <option value="Marmoraria">Marmoraria</option>
+                        <option value="Ar-condicionado">Ar-condicionado</option>
+                        <option value="Automação residencial">Automação residencial</option>
+                        <option value="Elétrica residencial">Elétrica residencial</option>
+                        <option value="Reforma">Reforma</option>
+                        <option value="Outro">Outro</option>
+                      </select>
+                    </label>
 
                     <label
                       htmlFor="dor-principal"
@@ -89,7 +103,7 @@ export function WaitlistSection({ isSubmitted, onSubmit, onBackToTop }: Waitlist
                         name="dorPrincipal"
                         required
                         rows={5}
-                        placeholder="Conte o que mais gera insegurança, atraso, prejuízo ou conflito na sua experiência."
+                        placeholder="Ex: tenho medo de contratar por indicação e descobrir que o profissional não entrega."
                         className={`${inputClassName} min-h-[132px] border-blue-200 bg-white`}
                       />
                     </label>

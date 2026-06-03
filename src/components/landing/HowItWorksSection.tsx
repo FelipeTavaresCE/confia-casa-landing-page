@@ -3,11 +3,37 @@ import { SectionHeader } from './SectionHeader'
 import { SectionReveal } from './SectionReveal'
 
 const resolveSteps = [
-  { icon: 'user-check' as const, title: 'Passo 1', description: 'Identidade validada.' },
-  { icon: 'briefcase' as const, title: 'Passo 2', description: 'Histórico de serviços.' },
-  { icon: 'contract' as const, title: 'Passo 3', description: 'Contrato digital.' },
-  { icon: 'chart' as const, title: 'Passo 4', description: 'Reputação baseada em entregas reais.' },
-  { icon: 'shield' as const, title: 'Passo 5', description: 'Proteção financeira por etapas (em breve).' },
+  {
+    icon: 'user-check' as const,
+    title: 'Passo 1',
+    headline: 'Profissional cria perfil',
+    description: 'Dados básicos, cidade, categorias atendidas e portfólio inicial.',
+  },
+  {
+    icon: 'briefcase' as const,
+    title: 'Passo 2',
+    headline: 'Identidade e regularidade',
+    description: 'CPF/CNPJ, tempo de mercado e informações profissionais são organizados para validação.',
+  },
+  {
+    icon: 'contract' as const,
+    title: 'Passo 3',
+    headline: 'Portfólio e histórico',
+    description: 'Serviços realizados, fotos, especialidades e comprovações ajudam a construir confiança.',
+  },
+  {
+    icon: 'chart' as const,
+    title: 'Passo 4',
+    headline: 'Selos ConfiaCasa',
+    description:
+      'Profissionais podem evoluir com selos como Identidade Verificada, CNPJ Ativo, Portfólio Comprovado e Histórico em Construção.',
+  },
+  {
+    icon: 'shield' as const,
+    title: 'Passo 5',
+    headline: 'Contratos mais claros',
+    description: 'Em versões futuras, a plataforma poderá apoiar contratos digitais e contratação assistida.',
+  },
 ]
 
 export function HowItWorksSection() {
@@ -32,7 +58,8 @@ export function HowItWorksSection() {
                 <FeatureIcon name={item.icon} className="h-5 w-5" />
               </div>
               <p className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">{item.title}</p>
-              <p className="mt-3 text-base font-semibold leading-relaxed text-emerald-950">{item.description}</p>
+              <p className="mt-3 text-base font-semibold leading-relaxed text-emerald-950">{item.headline}</p>
+              <p className="mt-2 text-sm leading-relaxed text-emerald-900/80">{item.description}</p>
             </li>
           ))}
         </ol>
