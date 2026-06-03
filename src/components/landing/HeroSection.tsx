@@ -2,9 +2,9 @@ import { FeatureIcon } from './FeatureIcon'
 import { SectionReveal } from './SectionReveal'
 
 const trustHighlights = [
-  'Mais seguro que depender apenas de avaliações na internet.',
-  'Diferente de Google, Instagram e marketplaces que apenas conectam.',
-  'Construído para validar identidade, histórico e contratos antes da contratação.',
+  'Perfis profissionais com identidade e dados verificáveis.',
+  'Histórico de entregas mais claro que avaliações soltas.',
+  'Contratos e portfólios organizados para reduzir insegurança.',
 ]
 
 export function HeroSection() {
@@ -16,15 +16,15 @@ export function HeroSection() {
           <span>Validando o mercado em Fortaleza.</span>
         </span>
         <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-          Quantas pessoas você conhece que já perderam dinheiro em uma reforma?
+          Contratar um profissional não deveria depender só de indicação.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-          O ConfiaCasa está construindo a primeira plataforma brasileira focada em proteger clientes e
-          profissionais através de reputação validada, contratos inteligentes e contratação segura.
+          O ConfiaCasa está construindo uma plataforma para transformar reputação profissional em algo verificável,
+          ajudando clientes a contratar com mais segurança e profissionais honestos a se destacarem.
         </p>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-500 sm:text-lg">
-          Estamos construindo o ConfiaCasa junto com clientes e profissionais para criar a forma mais segura de
-          contratar serviços residenciais no Brasil.
+          Estamos construindo o ConfiaCasa junto com clientes e profissionais para tornar a contratação residencial
+          mais clara, verificável e segura.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
@@ -62,20 +62,22 @@ export function HeroSection() {
             <FeatureIcon name="shield" className="h-4 w-4" />
             Confiança validada desde o primeiro contato
           </div>
-          <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">Menos risco. Mais clareza. Mais proteção.</h2>
+          <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">Reputação real. Escolhas melhores. Mais confiança.</h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-slate-300">
-            Hoje as pessoas usam Google, Instagram ou indicações soltas para contratar. O ConfiaCasa está sendo
-            criado para ir além da conexão e estruturar a confiança na contratação residencial.
+            Hoje as pessoas dependem de Google, Instagram, grupos de WhatsApp e indicações informais. O ConfiaCasa
+            está sendo criado para organizar reputação, histórico e credibilidade em um só lugar.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
               <p className="text-sm text-blue-100">Cenário atual</p>
-              <p className="mt-2 text-lg font-semibold">Avaliações soltas, sem contrato e risco financeiro imprevisível.</p>
+              <p className="mt-2 text-lg font-semibold">Avaliações soltas, indicação informal e pouca clareza sobre histórico real.</p>
             </div>
             <div className="rounded-2xl border border-emerald-300/20 bg-emerald-400/10 p-5 backdrop-blur-sm">
               <p className="text-sm text-emerald-100">Com o ConfiaCasa</p>
-              <p className="mt-2 text-lg font-semibold">Identidade validada, histórico real e contratação mais segura.</p>
+              <p className="mt-2 text-lg font-semibold">
+                Identidade validada, portfólio organizado, selos de confiança e histórico profissional em construção.
+              </p>
             </div>
           </div>
 
@@ -84,8 +86,7 @@ export function HeroSection() {
               <div>
                 <p className="text-sm font-medium text-blue-100">Infraestrutura de confiança</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                  Reputação validada, contratos digitais e proteção financeira por etapas para reduzir golpes,
-                  disputas e insegurança.
+                  Uma camada de reputação verificável para serviços residenciais.
                 </p>
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-4 py-2 text-sm font-semibold text-emerald-100">

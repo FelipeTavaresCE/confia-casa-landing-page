@@ -3,29 +3,29 @@ import { SectionReveal } from './SectionReveal'
 
 const faqItems = [
   {
-    question: 'O ConfiaCasa já está disponível no Brasil inteiro?',
+    question: 'O ConfiaCasa garante que o profissional não dará problema?',
     answer:
-      'Ainda não. Estamos validando o produto com usuários reais em Fortaleza para garantir uma experiência segura antes da expansão nacional.',
+      'Não prometemos garantia total. A proposta da plataforma é reduzir riscos oferecendo mais informação, reputação verificável, portfólio organizado, selos e contratos mais claros.',
   },
   {
-    question: 'O que diferencia o ConfiaCasa de Google, Instagram ou marketplaces tradicionais?',
+    question: 'Vocês são iguais ao GetNinjas?',
     answer:
-      'Essas plataformas ajudam a encontrar profissionais. O ConfiaCasa está sendo criado para estruturar confiança com identidade validada, histórico de serviços, contratos digitais e reputação baseada em entregas reais.',
+      'Não. Marketplaces tradicionais normalmente focam em conectar clientes e profissionais. O ConfiaCasa quer focar em confiança, reputação verificável e histórico profissional.',
   },
   {
-    question: 'Como a reputação será calculada?',
+    question: 'O profissional paga para aparecer?',
     answer:
-      'A reputação vai considerar serviços concluídos, prazo, orçamento, avaliações verificadas, contratos executados e histórico de disputas — não apenas comentários aleatórios.',
+      'Na fase inicial, não. O objetivo é validar o mercado, ouvir clientes e cadastrar bons profissionais.',
   },
   {
-    question: 'O pagamento ficará protegido?',
+    question: 'Como vocês evitam avaliações falsas?',
     answer:
-      'Esse é um dos pilares do produto. O modelo prevê proteção financeira por etapas para que o valor seja liberado conforme a entrega for validada.',
+      'A proposta é evoluir para avaliações vinculadas a serviços reais, com histórico, contrato e evidências, evitando comentários soltos e manipuláveis.',
   },
   {
-    question: 'Sou profissional. Posso entrar na lista de espera?',
+    question: 'Por que começar por Fortaleza?',
     answer:
-      'Pode. Selecione “Profissional” no formulário para receber novidades sobre verificação de perfil, onboarding e benefícios pensados para quem presta serviço com seriedade.',
+      'Porque é onde estamos validando o problema de perto, ouvindo clientes e profissionais antes de expandir.',
   },
 ]
 
