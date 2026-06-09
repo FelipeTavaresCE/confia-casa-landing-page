@@ -83,30 +83,30 @@ export function WaitlistSection({ isSubmitting, onSubmit, submissionStatus }: Wa
 
               <form onSubmit={onSubmit} className="mt-8 space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label htmlFor="waitlist-name" className="flex flex-col gap-2 text-sm font-medium text-slate-700">
                     Nome
-                    <input name="name" type="text" required className={inputClassName} />
+                    <input id="waitlist-name" name="name" type="text" required className={inputClassName} />
                   </label>
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label htmlFor="waitlist-phone" className="flex flex-col gap-2 text-sm font-medium text-slate-700">
                     WhatsApp
-                    <input name="phone" type="tel" required className={inputClassName} />
+                    <input id="waitlist-phone" name="phone" type="tel" required className={inputClassName} />
                   </label>
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label htmlFor="waitlist-city" className="flex flex-col gap-2 text-sm font-medium text-slate-700">
                     Cidade
-                    <input name="city" type="text" required className={inputClassName} />
+                    <input id="waitlist-city" name="city" type="text" required className={inputClassName} />
                   </label>
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label htmlFor="waitlist-type" className="flex flex-col gap-2 text-sm font-medium text-slate-700">
                     Tipo
-                    <select name="type" required defaultValue="Cliente" className={inputClassName}>
+                    <select id="waitlist-type" name="type" required defaultValue="Cliente" className={inputClassName}>
                       <option value="Cliente">Cliente</option>
                       <option value="Profissional">Profissional</option>
                     </select>
                   </label>
                 </div>
 
-                <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                <label htmlFor="waitlist-service" className="flex flex-col gap-2 text-sm font-medium text-slate-700">
                   Categoria de interesse (opcional)
-                  <select name="service" defaultValue="" className={inputClassName}>
+                  <select id="waitlist-service" name="service" defaultValue="" className={inputClassName}>
                     <option value="">Selecione uma categoria</option>
                     <option value="Energia solar">Energia solar</option>
                     <option value="Móveis planejados">Móveis planejados</option>
