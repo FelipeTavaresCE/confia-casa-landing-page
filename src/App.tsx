@@ -49,6 +49,7 @@ function App() {
     const { error } = await supabase.from('leads').insert(entry)
 
     if (error) {
+      console.error(error)
       setSubmissionStatus('error')
       setIsSubmitting(false)
       return
