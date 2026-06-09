@@ -9,64 +9,54 @@ import { ProblemsSection } from './components/landing/ProblemsSection'
 import { ProtectionSection } from './components/landing/ProtectionSection'
 import { ReputationSection } from './components/landing/ReputationSection'
 import { WaitlistSection } from './components/landing/WaitlistSection'
+import { supabase } from './lib/supabase'
 
-type WaitlistType = 'Cliente' | 'Profissional'
+type LeadType = 'Cliente' | 'Profissional'
 
-type WaitlistEntry = {
-  nome: string
-  email: string
-  whatsapp: string
-  cidade: string
-  tipo: WaitlistType
-  dorPrincipal: string
-  createdAt: string
+type LeadEntry = {
+  type: LeadType
+  name: string
+  phone: string
+  city: string
+  service: string
+  description: string
 }
 
-const STORAGE_KEY = 'confiaCasaWaitlist'
-
-function parseStoredEntries(): WaitlistEntry[] {
-  const existingEntries = localStorage.getItem(STORAGE_KEY)
-
-  if (!existingEntries) return []
-
-  try {
-    const parsedEntries = JSON.parse(existingEntries)
-    return Array.isArray(parsedEntries) ? (parsedEntries as WaitlistEntry[]) : []
-  } catch {
-    return []
-  }
-}
+type SubmissionStatus = 'idle' | 'success' | 'error'
 
 function App() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submissionStatus, setSubmissionStatus] = useState<SubmissionStatus>('idle')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const form = event.currentTarget
     const formData = new FormData(form)
 
-    const entry: WaitlistEntry = {
-      nome: String(formData.get('nome') ?? ''),
-      email: String(formData.get('email') ?? ''),
-      whatsapp: String(formData.get('whatsapp') ?? ''),
-      cidade: String(formData.get('cidade') ?? ''),
-      tipo: String(formData.get('tipo') ?? 'Cliente') as WaitlistType,
-      dorPrincipal: String(formData.get('dorPrincipal') ?? ''),
-      createdAt: new Date().toISOString(),
+    const entry: LeadEntry = {
+      type: String(formData.get('type') ?? 'Cliente') as LeadType,
+      name: String(formData.get('name') ?? ''),
+      phone: String(formData.get('phone') ?? ''),
+      city: String(formData.get('city') ?? ''),
+      service: String(formData.get('service') ?? ''),
+      description: String(formData.get('description') ?? ''),
     }
 
-    const parsedEntries = parseStoredEntries()
-    parsedEntries.push(entry)
+    setIsSubmitting(true)
+    setSubmissionStatus('idle')
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(parsedEntries))
+    const { error } = await supabase.from('leads').insert(entry)
+
+    if (error) {
+      setSubmissionStatus('error')
+      setIsSubmitting(false)
+      return
+    }
+
     form.reset()
-    setIsSubmitted(true)
-  }
-
-  const handleReturnHome = () => {
-    setIsSubmitted(false)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setSubmissionStatus('success')
+    setIsSubmitting(false)
   }
 
   return (
@@ -101,7 +91,7 @@ function App() {
         <HowItWorksSection />
         <ProtectionSection />
         <ReputationSection />
-        <WaitlistSection isSubmitted={isSubmitted} onBackToTop={handleReturnHome} onSubmit={handleSubmit} />
+        <WaitlistSection isSubmitting={isSubmitting} onSubmit={handleSubmit} submissionStatus={submissionStatus} />
         <FAQSection />
       </main>
 
