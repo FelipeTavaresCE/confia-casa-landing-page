@@ -10,6 +10,8 @@ type WaitlistSectionProps = {
   onBackToTop: () => void
 }
 
+const STICKY_HEADER_OFFSET = 80
+
 const inputClassName =
   'rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none ring-blue-900/10 transition duration-300 placeholder:text-slate-400 focus:border-blue-400 focus:ring'
 
@@ -18,7 +20,7 @@ export function WaitlistSection({ isSubmitted, onSubmit, onBackToTop }: Waitlist
 
   useEffect(() => {
     if (isSubmitted && sectionTopRef.current) {
-      const top = sectionTopRef.current.getBoundingClientRect().top + window.scrollY - 80
+      const top = sectionTopRef.current.getBoundingClientRect().top + window.scrollY - STICKY_HEADER_OFFSET
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }, [isSubmitted])
