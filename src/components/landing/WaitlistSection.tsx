@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import type { FormEvent } from 'react'
 import { FeatureIcon } from './FeatureIcon'
 import { SectionHeader } from './SectionHeader'
@@ -9,13 +10,24 @@ type WaitlistSectionProps = {
   onBackToTop: () => void
 }
 
+const STICKY_HEADER_OFFSET = 80
+
 const inputClassName =
   'rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none ring-blue-900/10 transition duration-300 placeholder:text-slate-400 focus:border-blue-400 focus:ring'
 
 export function WaitlistSection({ isSubmitted, onSubmit, onBackToTop }: WaitlistSectionProps) {
+  const sectionTopRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (isSubmitted && sectionTopRef.current) {
+      const top = sectionTopRef.current.getBoundingClientRect().top + window.scrollY - STICKY_HEADER_OFFSET
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+  }, [isSubmitted])
+
   return (
     <SectionReveal id="lista-espera" className="py-16" as="section">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div ref={sectionTopRef} className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-[36px] border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5 sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
             <div>
@@ -128,6 +140,9 @@ export function WaitlistSection({ isSubmitted, onSubmit, onBackToTop }: Waitlist
                     </p>
                     <p className="mt-3 text-base leading-relaxed text-slate-600">
                       Suas respostas vão ajudar a construir a plataforma.
+                    </p>
+                    <p className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium leading-relaxed text-emerald-800">
+                      Recebemos seu cadastro. Em breve entraremos em contato pelo WhatsApp.
                     </p>
                   </div>
 
